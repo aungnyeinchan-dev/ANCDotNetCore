@@ -21,7 +21,7 @@ namespace ANCDotNetCore.ConsoleApp
             //Edit(14);
             //Create("title", "author", "content");
             //Update(14, "title 2", "author 2", "content 2");
-            Delete(14);
+            //Delete(14);
         }
 
         private void Read()

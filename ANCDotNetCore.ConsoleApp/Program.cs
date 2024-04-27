@@ -41,7 +41,12 @@ adoDotNetExample.Edit(12);
 adoDotNetExample.Edit(1);
 */
 
-DapperExample dapperExample = new DapperExample();
+/*DapperExample dapperExample = new DapperExample();
 dapperExample.Run();
+*/
+
+EFCoreExample eFCoreExample = new EFCoreExample();
+eFCoreExample.Run();
+
 
 Console.ReadKey();

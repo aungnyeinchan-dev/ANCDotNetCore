@@ -1,4 +1,4 @@
-﻿using ANCDotNetCore.ConsoleApp;
+﻿using ANCDotNetCore.ConsoleApp.EFCoreExamples;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;

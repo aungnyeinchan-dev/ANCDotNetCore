@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ANCDotNetCore.ConsoleApp.Dtos;
 
-namespace ANCDotNetCore.ConsoleApp
+namespace ANCDotNetCore.ConsoleApp.EFCoreExamples
 {
     internal class EFCoreExample
     {
@@ -72,7 +73,7 @@ namespace ANCDotNetCore.ConsoleApp
                 return;
             }
 
-            item.BlogTitle = title; 
+            item.BlogTitle = title;
             item.BlogAuthor = author;
             item.BlogContent = content;
 
@@ -82,7 +83,7 @@ namespace ANCDotNetCore.ConsoleApp
             Console.WriteLine(message);
         }
 
-        private void Delete(int id) 
+        private void Delete(int id)
         {
             var item = db.Blogs.FirstOrDefault(x => x.BlogId == id);
             if (item is null)

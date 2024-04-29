@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ANCDotNetCore.ConsoleApp;
+namespace ANCDotNetCore.ConsoleApp.Dtos;
 
 [Table("Tbl_Blog")]
 public class BlogDto
@@ -16,9 +16,9 @@ public class BlogDto
 
     public string BlogTitle { get; set; }
 
-    public string BlogAuthor { get; set;}
+    public string BlogAuthor { get; set; }
 
-    public string BlogContent { get; set;}
+    public string BlogContent { get; set; }
 }
 
 //public record BlogEntity(int BlogId, string BlogTitle, string BlogAuthor, string BlogContent );

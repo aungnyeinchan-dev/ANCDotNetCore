@@ -1,4 +1,6 @@
-﻿using Dapper;
+﻿using ANCDotNetCore.ConsoleApp.Dtos;
+using ANCDotNetCore.ConsoleApp.Services;
+using Dapper;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,7 +10,7 @@ using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ANCDotNetCore.ConsoleApp
+namespace ANCDotNetCore.ConsoleApp.DapperExamples
 {
     internal class DapperExample
     {
@@ -29,7 +31,7 @@ namespace ANCDotNetCore.ConsoleApp
             using IDbConnection db = new SqlConnection(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
             List<BlogDto> lst = db.Query<BlogDto>("select * from tbl_blog").ToList();
 
-            foreach (BlogDto item in lst) 
+            foreach (BlogDto item in lst)
             {
                 Console.WriteLine(item.BlogId);
                 Console.WriteLine(item.BlogTitle);
@@ -40,11 +42,11 @@ namespace ANCDotNetCore.ConsoleApp
             }
         }
 
-        private void Edit (int id) 
+        private void Edit(int id)
         {
             using IDbConnection db = new SqlConnection(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
             var item = db.Query<BlogDto>("select * from tbl_blog where blogid = @BlogId", new BlogDto { BlogId = id }).FirstOrDefault();
-            if(item is null)
+            if (item is null)
             {
                 Console.WriteLine("No data is found.");
                 return;
@@ -56,7 +58,7 @@ namespace ANCDotNetCore.ConsoleApp
             Console.WriteLine(item.BlogContent);
         }
 
-        private void Create (string title, string author, string content)
+        private void Create(string title, string author, string content)
         {
             var item = new BlogDto
             {
@@ -82,7 +84,7 @@ namespace ANCDotNetCore.ConsoleApp
 
         }
 
-        private void Update (int id, string title, string author, string content) 
+        private void Update(int id, string title, string author, string content)
         {
             var item = new BlogDto
             {
@@ -106,7 +108,7 @@ namespace ANCDotNetCore.ConsoleApp
 
         }
 
-        private void Delete (int id) 
+        private void Delete(int id)
         {
             var item = new BlogDto
             {

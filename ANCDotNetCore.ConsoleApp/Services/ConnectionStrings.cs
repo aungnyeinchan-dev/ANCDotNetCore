@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ANCDotNetCore.ConsoleApp
+namespace ANCDotNetCore.ConsoleApp.Services
 {
     internal static class ConnectionStrings
     {

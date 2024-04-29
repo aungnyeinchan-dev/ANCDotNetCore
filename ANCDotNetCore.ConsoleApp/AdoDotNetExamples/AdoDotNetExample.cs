@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reflection.Metadata;
 
-namespace ANCDotNetCore.ConsoleApp
+namespace ANCDotNetCore.ConsoleApp.AdoDotNetExamples
 {
     internal class AdoDotNetExample
     {
@@ -18,7 +18,7 @@ namespace ANCDotNetCore.ConsoleApp
             UserID = "sa",
             Password = "sa@123"
         };
-        
+
         public void Read()
         {
             SqlConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
@@ -73,10 +73,10 @@ namespace ANCDotNetCore.ConsoleApp
             Console.WriteLine("Blog Title => " + dr["BlogTitle"]);
             Console.WriteLine("Blog Author => " + dr["BlogAuthor"]);
             Console.WriteLine("Blog Content => " + dr["BlogContent"]);
-            Console.WriteLine("_____________________________________");        
+            Console.WriteLine("_____________________________________");
         }
 
-        public void Create(string title, string author, string content) 
+        public void Create(string title, string author, string content)
         {
             SqlConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
 
@@ -95,7 +95,7 @@ namespace ANCDotNetCore.ConsoleApp
             cmd.Parameters.AddWithValue("@BlogTitle", title);
             cmd.Parameters.AddWithValue("@BlogAuthor", author);
             cmd.Parameters.AddWithValue("@BlogContent", content);
-            int result = cmd.ExecuteNonQuery(); 
+            int result = cmd.ExecuteNonQuery();
 
             connection.Close();
 
@@ -103,7 +103,7 @@ namespace ANCDotNetCore.ConsoleApp
             Console.WriteLine(message);
         }
 
-        public void Update(int id, string title, string author, string content) 
+        public void Update(int id, string title, string author, string content)
         {
             SqlConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
 

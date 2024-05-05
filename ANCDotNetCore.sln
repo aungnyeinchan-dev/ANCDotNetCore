@@ -10,7 +10,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Document", "Document", "{08
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ANCDotNetCore.RestApi", "ANCDotNetCore.RestApi\ANCDotNetCore.RestApi.csproj", "{CF82CBD5-4274-4DB9-B1C0-32290192F288}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ANCDotNetCore.RestApi", "ANCDotNetCore.RestApi\ANCDotNetCore.RestApi.csproj", "{CF82CBD5-4274-4DB9-B1C0-32290192F288}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ANCDotNetCore.Shared", "ANCDotNetCore.Shared\ANCDotNetCore.Shared.csproj", "{E37A9FBD-39FD-4FF3-ADCA-01912AC27D06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,9 +28,16 @@ Global
 		{CF82CBD5-4274-4DB9-B1C0-32290192F288}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF82CBD5-4274-4DB9-B1C0-32290192F288}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF82CBD5-4274-4DB9-B1C0-32290192F288}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E37A9FBD-39FD-4FF3-ADCA-01912AC27D06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E37A9FBD-39FD-4FF3-ADCA-01912AC27D06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E37A9FBD-39FD-4FF3-ADCA-01912AC27D06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E37A9FBD-39FD-4FF3-ADCA-01912AC27D06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E37A9FBD-39FD-4FF3-ADCA-01912AC27D06} = {08FAF57B-B6D0-4EC8-8817-250B5B8DBB36}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {17E4C489-D860-491D-8BD7-42E90820323D}

@@ -126,6 +126,7 @@ namespace ANCDotNetCore.RestApi.Controllers
             {
                 return NotFound("No data is found");
             }
+
             blog.BlogId = id;
             string query = @"UPDATE [dbo].[Tbl_Blog]
    SET [BlogTitle] = @BlogTitle 

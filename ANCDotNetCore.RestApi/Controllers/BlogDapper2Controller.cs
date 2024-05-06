@@ -87,15 +87,15 @@ namespace ANCDotNetCore.RestApi.Controllers
             string conditions = string.Empty;
             if (!string.IsNullOrEmpty(blog.BlogTitle))
             {
-                conditions = " [BlogTitle] = @BlogTitle, ";
+                conditions += " [BlogTitle] = @BlogTitle, ";
             }
             if (!string.IsNullOrEmpty(blog.BlogTitle))
             {
-                conditions = " [BlogAuthor] = @BlogAuthor, ";
+                conditions += " [BlogAuthor] = @BlogAuthor, ";
             }
             if (!string.IsNullOrEmpty(blog.BlogContent))
             {
-                conditions = " [BlogContent] = @BlogContent, ";
+                conditions += " [BlogContent] = @BlogContent, ";
             }
 
             if(conditions.Length == 0) 
@@ -104,6 +104,8 @@ namespace ANCDotNetCore.RestApi.Controllers
             }
 
             conditions = conditions.Substring(0, conditions.Length - 2);
+
+            blog.BlogId = id;  
 
             string query = $@"UPDATE [dbo].[Tbl_Blog]
    SET {conditions}

@@ -1,7 +1,4 @@
-﻿using ANCDotNetCore.RestApi.Models;
-using Microsoft.EntityFrameworkCore;
-
-namespace ANCDotNetCore.RestApi.Db;
+﻿namespace ANCDotNetCore.RestApiWithNLayer.Db;
 
 internal class AppDbContext : DbContext
 {

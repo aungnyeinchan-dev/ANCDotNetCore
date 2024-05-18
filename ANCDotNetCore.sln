@@ -20,7 +20,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ANCDotNetCore.ConsoleAppHtt
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ANCDotNetCoreConsoleAppHttpClientExamples", "ANCDotNetCoreConsoleAppHttpClientExample\ANCDotNetCoreConsoleAppHttpClientExamples.csproj", "{1BAE31DD-9AF5-4A29-A294-2D9167FE9A5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ANCDotNetCore.ConsoleAppRestClientExamples", "ANCDotNetCore.ConsoleAppRestClientExample\ANCDotNetCore.ConsoleAppRestClientExamples.csproj", "{FE3AD44C-D0C6-4F67-802D-1500BAF8C48D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ANCDotNetCore.ConsoleAppRestClientExamples", "ANCDotNetCore.ConsoleAppRestClientExample\ANCDotNetCore.ConsoleAppRestClientExamples.csproj", "{FE3AD44C-D0C6-4F67-802D-1500BAF8C48D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ANCDotNetCore.PizzaApi", "ANCDotNetCore.PizzaApi\ANCDotNetCore.PizzaApi.csproj", "{06A906B9-A834-4241-9A56-678731C61F30}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,6 +58,10 @@ Global
 		{FE3AD44C-D0C6-4F67-802D-1500BAF8C48D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE3AD44C-D0C6-4F67-802D-1500BAF8C48D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE3AD44C-D0C6-4F67-802D-1500BAF8C48D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06A906B9-A834-4241-9A56-678731C61F30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06A906B9-A834-4241-9A56-678731C61F30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06A906B9-A834-4241-9A56-678731C61F30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06A906B9-A834-4241-9A56-678731C61F30}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

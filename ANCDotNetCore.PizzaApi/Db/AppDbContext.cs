@@ -79,7 +79,6 @@ public class PizzaOrderDetailModel
     public int PizzaExtraId { get; set; }
 }
 
-
 public class PizzaOrderInvoiceHeadModel
 {
     public int PizzaOrderId { get; set; }

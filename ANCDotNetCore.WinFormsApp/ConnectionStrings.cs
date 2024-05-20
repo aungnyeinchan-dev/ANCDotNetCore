@@ -1,6 +1,6 @@
 ﻿using System.Data.SqlClient;
 
-namespace ANCDotNetCore.RestApiWithNLayer
+namespace ANCDotNetCore.WinFormsApp
 {
     internal static class ConnectionStrings
     {

@@ -52,6 +52,7 @@
             dgvData.RowTemplate.Height = 25;
             dgvData.Size = new Size(800, 450);
             dgvData.TabIndex = 0;
+            dgvData.CellContentClick += dgvData_CellContentClick;
             // 
             // colId
             // 
@@ -67,6 +68,7 @@
             colEdit.Name = "colEdit";
             colEdit.ReadOnly = true;
             colEdit.Text = "Edit";
+            colEdit.UseColumnTextForButtonValue = true;
             // 
             // colDelete
             // 
@@ -74,6 +76,7 @@
             colDelete.Name = "colDelete";
             colDelete.ReadOnly = true;
             colDelete.Text = "Delete";
+            colDelete.UseColumnTextForButtonValue = true;
             // 
             // colTitle
             // 

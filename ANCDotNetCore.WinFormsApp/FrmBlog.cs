@@ -7,6 +7,7 @@ namespace ANCDotNetCore.WinFormsApp
     public partial class FrmBlog : Form
     {
         private readonly DapperService _dapperService;
+        private readonly int _blogId;
 
         public FrmBlog()
         {
@@ -14,12 +15,29 @@ namespace ANCDotNetCore.WinFormsApp
             _dapperService = new DapperService(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
         }
 
+        public FrmBlog(int blogId)
+        {
+            InitializeComponent();
+            _blogId = blogId;
+            _dapperService = new DapperService(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
+
+            var model = _dapperService.QueryFirstOrDafault<BlogModel>("select * from tbl_blog where blogid = @BlogId",
+                new { BlogId = _blogId });
+
+            txtTitle.Text = model.BlogTitle;
+            txtAuthor.Text = model.BlogAuthor;
+            txtContent.Text = model.BlogContent;
+
+            btnSave.Visible = false;
+            btnUpdate.Visible = true;
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
             {
                 BlogModel blog = new BlogModel();
-                blog.BlogTitle =txtTitle.Text.Trim();
+                blog.BlogTitle = txtTitle.Text.Trim();
                 blog.BlogAuthor = txtAuthor.Text.Trim();
                 blog.BlogContent = txtContent.Text.Trim();
 
@@ -27,7 +45,7 @@ namespace ANCDotNetCore.WinFormsApp
                 string message = result > 0 ? "Saving Successful." : "Saving Failed.";
                 var messageBoxIcon = result > 0 ? MessageBoxIcon.Information : MessageBoxIcon.Error;
                 MessageBox.Show(message, "Blog", MessageBoxButtons.OK, messageBoxIcon);
-                if(result > 0)
+                if (result > 0)
                     ClearControls();
             }
             catch (Exception ex)
@@ -41,6 +59,37 @@ namespace ANCDotNetCore.WinFormsApp
             ClearControls();
         }
 
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var item = new BlogModel
+                {
+                    BlogId = _blogId,
+                    BlogTitle = txtTitle.Text.Trim(),
+                    BlogAuthor = txtAuthor.Text.Trim(),
+                    BlogContent = txtContent.Text.Trim(),   
+                };
+
+                string query = @"UPDATE [dbo].[Tbl_Blog]
+   SET [BlogTitle] = @BlogTitle 
+      ,[BlogAuthor] = @BlogAuthor 
+      ,[BlogContent] = @BlogContent
+ WHERE BlogId = @BlogId";
+
+                int result = _dapperService.Execute(query, item);
+
+                string message = result > 0 ? "Updating Successful." : "Updating Failed.";
+                MessageBox.Show(message);
+
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
         private void ClearControls()
         {
             txtTitle.Clear();
@@ -49,5 +98,11 @@ namespace ANCDotNetCore.WinFormsApp
 
             txtTitle.Focus();
         }
+
+        private void FrmBlog_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

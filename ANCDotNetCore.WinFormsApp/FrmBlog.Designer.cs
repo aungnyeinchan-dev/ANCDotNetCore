@@ -36,6 +36,7 @@
             txtContent = new TextBox();
             btnSave = new Button();
             btnCancel = new Button();
+            btnUpdate = new Button();
             SuspendLayout();
             // 
             // label1
@@ -98,6 +99,7 @@
             btnSave.TabIndex = 6;
             btnSave.Text = "&Save";
             btnSave.UseVisualStyleBackColor = false;
+            btnSave.Visible = false;
             btnSave.Click += btnSave_Click;
             // 
             // btnCancel
@@ -113,11 +115,25 @@
             btnCancel.UseVisualStyleBackColor = false;
             btnCancel.Click += btnCancel_Click;
             // 
+            // btnUpdate
+            // 
+            btnUpdate.BackColor = Color.BlueViolet;
+            btnUpdate.FlatStyle = FlatStyle.Flat;
+            btnUpdate.ForeColor = Color.White;
+            btnUpdate.Location = new Point(109, 209);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(75, 28);
+            btnUpdate.TabIndex = 8;
+            btnUpdate.Text = "&Update";
+            btnUpdate.UseVisualStyleBackColor = false;
+            btnUpdate.Click += btnUpdate_Click;
+            // 
             // FrmBlog
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(534, 261);
+            Controls.Add(btnUpdate);
             Controls.Add(btnCancel);
             Controls.Add(btnSave);
             Controls.Add(txtContent);
@@ -130,6 +146,7 @@
             Name = "FrmBlog";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Blog";
+            Load += FrmBlog_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -144,5 +161,6 @@
         private TextBox txtContent;
         private Button btnSave;
         private Button btnCancel;
+        private Button btnUpdate;
     }
 }

@@ -50,6 +50,8 @@ namespace ANCDotNetCore.WinFormsApp
 
             if (e.RowIndex == -1) return;
 
+            #region If case
+
             var blogId = Convert.ToInt32(dgvData.Rows[e.RowIndex].Cells["colId"].Value);
 
             if (e.ColumnIndex == (int)EnumFormControlType.Edit)
@@ -67,6 +69,8 @@ namespace ANCDotNetCore.WinFormsApp
                 DeleteBlog(blogId);
             }
 
+            #endregion
+
             /*string formControlType = "None";
             switch (formControlType) 
             {
@@ -77,7 +81,32 @@ namespace ANCDotNetCore.WinFormsApp
                 default:
                     break;
             }*/
-            // using switch 
+
+            #region Switch case
+
+            int index = e.ColumnIndex;
+            EnumFormControlType enumFormControlType = (EnumFormControlType)index;
+            switch (enumFormControlType)
+            {
+                case EnumFormControlType.Edit:
+                    FrmBlog frm = new FrmBlog(blogId);
+                    frm.ShowDialog();
+
+                    BlogList();
+                    break;
+                case EnumFormControlType.Delete:
+                    var dialogResult = MessageBox.Show("Are you sure want to delete?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dialogResult != DialogResult.Yes) return;
+
+                    DeleteBlog(blogId);
+                    break;
+                case EnumFormControlType.None:
+                default:
+                    MessageBox.Show("Invalid Case.");
+                    break;
+            }
+
+            #endregion
 
             /*EnumFormControlType enumFormControlType = EnumFormControlType.None;
             switch (enumFormControlType) 
@@ -91,7 +120,7 @@ namespace ANCDotNetCore.WinFormsApp
                 default:
                     break;
             }*/
-            // using Enum switch
+
         }
 
         private void DeleteBlog(int id)
